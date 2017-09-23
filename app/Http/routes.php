@@ -40,7 +40,12 @@ Route::get('/update', function(){
 	$photo->save();
 });
 
-
+Route::get('/delete', function(){
+	$staff = Staff::findOrFail(1);
+	
+	//$staff->photos()->whereName('bad_photo.jpg')->delete(); //alternative
+	$staff->photos()->delete();
+});
 
 
 
